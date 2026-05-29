@@ -2,7 +2,7 @@ package DSA.GRAPH;
 
 import java.util.ArrayList;
 
-public class DFS {
+ class DFS {
     public static void  Travel(ArrayList<ArrayList<Integer>> adj , int vis[], ArrayList<Integer> ans, int elem){
 
         ans.add(elem);
