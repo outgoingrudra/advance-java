@@ -16,7 +16,7 @@ class Node{
     }
 }
 public class DoublyLL {
-    public static  Node convert(int arr[]){
+    private static  Node convert(int arr[]){
         Node head = new Node(arr[0]);
         Node prev = head ;
 
@@ -30,7 +30,7 @@ public class DoublyLL {
          return head ;
 
     }
-    public static void print(Node head){
+    private static void print(Node head){
         System.out.print("DBL LL : ");
       while(head != null){
           System.out.print(head.data+" ");
@@ -38,7 +38,7 @@ public class DoublyLL {
       }
         System.out.println();
     }
-    public static  Node deleteHead(Node head){
+    private static  Node deleteHead(Node head){
         if(head==null || head.next== null){
             return null ;
         }
@@ -111,6 +111,19 @@ public class DoublyLL {
         return head;
 
     }
+    private static Node reverse(Node head){
+        if(head==null || head.next == null) return  head ;
+        Node prev = null ;
+        Node curr = head ;
+        while(curr != null){
+            prev = curr.prev ;
+            curr.prev = curr.next ;
+            curr.next = prev;
+
+            curr = curr.prev ;
+        }
+        return prev.prev ;
+    }
     public static void main(String[] args) {
         int arr[] = new int[]{12,12,3,4,5,6};
         Node head = convert(arr);
@@ -120,7 +133,8 @@ public class DoublyLL {
 //      head = deleteKthNode(head,3);
 //      head = insertBeforeHead(head,100);
 //      head = insertBeforetail(head, 100);
-        head = insertBeforeKthElement(head,3,100);
+//      head = insertBeforeKthElement(head,3,100);
+        head = reverse(head);
 
         print(head);
 
