@@ -4,7 +4,6 @@ public class lemonade {
     public boolean lemonadeChange(int[] bills) {
         int f = 0;
         int t = 0;
-        int t2 = 0;
         for(int  x : bills ){
             if(x==5) f++;
             else{
