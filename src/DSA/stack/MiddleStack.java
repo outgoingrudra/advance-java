@@ -43,7 +43,7 @@ public class MiddleStack {
      }
 
      public int pop() throws Exception{
-         if(length==0) throw new Exception("No Element to be Popped !")
+         if(length==0) throw new Exception("No Element to be Popped !");
          Node toPop = head.prev ;
          int data  = toPop.value ;
          if(length==1){
